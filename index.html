@@ -34,11 +34,41 @@
     opacity: 0;
     filter: blur(8px);
   }
+
+  .contact-btn {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 32px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #CCC;
+    opacity: 0.5;
+    background: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Nebula', sans-serif;
+    border: none;
+  }
+
+  .contact-btn:hover {
+    color: #ffffff;
+    opacity: 1.0;
+  }
+
+  .contact-btn:active {
+    transform: translateX(-50%) scale(0.98);
+  }
 </style>
 </head>
 <body>
 
 <div class="container" id="text"></div>
+
+<button class="contact-btn" id="contactBtn">PHARMA, FASTER</button>
 
 <script>
 const text = "MORPHOCARVER";
@@ -63,7 +93,21 @@ document.addEventListener("mousemove", (e) => {
 function updateMorphBasedOnMouse() {
   const chars = document.querySelectorAll(".char");
   const screenHeight = window.innerHeight;
-  const morphRatio = 1 - (mouseY / screenHeight); // 0 at bottom, 1 at top
+  
+  // Use only middle 80% of screen (10% to 90%)
+  const topDeadZone = screenHeight * 0.1;
+  const bottomDeadZone = screenHeight * 0.9;
+  
+  let morphRatio;
+  if (mouseY < topDeadZone) {
+    morphRatio = 1; // Top dead zone = fully morphed
+  } else if (mouseY > bottomDeadZone) {
+    morphRatio = 0; // Bottom dead zone = not morphed
+  } else {
+    // Map the middle 80% to 0-1
+    morphRatio = 1 - ((mouseY - topDeadZone) / (bottomDeadZone - topDeadZone));
+  }
+  
   const charCount = chars.length;
   const morphCount = Math.round(charCount * morphRatio);
 
@@ -83,6 +127,15 @@ function updateMorphBasedOnMouse() {
     }
   });
 }
+
+// Contact button functionality
+document.getElementById("contactBtn").addEventListener("click", () => {
+  const recipientEmail = "hello@morphocarver.com";
+  const subject = "Contact Message";
+  const body = "Hello, I would like to know how MorphoCarver can help me design pharma facilities faster.";
+  
+  window.location.href = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
 </script>
 
 </body>

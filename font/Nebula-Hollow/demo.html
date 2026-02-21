@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webfont Demo</title>
+    <style>
+        body { 
+            background: #222; 
+            color: #ddd; 
+            font-family: system-ui, -apple-system, sans-serif; 
+            margin: 0; padding: 40px; 
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .font-section { 
+            background: #333; 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin-bottom: 40px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .header { 
+            border-bottom: 1px solid #444; 
+            padding-bottom: 15px; 
+            margin-bottom: 20px; 
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        h2 { margin: 0; color: #fff; }
+        .badge { 
+            background: #555; color: #fff; padding: 4px 8px; 
+            border-radius: 4px; font-size: 12px; 
+        }
+        .code-box { 
+            background: #111; 
+            border-radius: 6px; 
+            margin-bottom: 20px; 
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+        .code-header { 
+            background: #2a2a2a; 
+            padding: 5px 10px; 
+            font-size: 11px; 
+            color: #aaa; 
+            text-transform: uppercase; letter-spacing: 1px;
+            border-bottom: 1px solid #444;
+        }
+        pre { margin: 0; padding: 15px; overflow-x: auto; color: #a5b3ce; font-size: 13px; }
+        
+        /* Embed Generated CSS */
+        @font-face {
+  font-family: 'Nebula-Hollow';
+  font-family: 'Nebula-Hollow';
+  src: url('Nebula-Hollow.eot'); /* IE9 Compat Modes */
+  src: url('Nebula-Hollow.eot?#iefix') format('embedded-opentype'),
+       url('Nebula-Hollow.woff2') format('woff2'),
+       url('Nebula-Hollow.woff') format('woff'),
+       url('Nebula-Hollow.ttf') format('truetype'),
+       url('Nebula-Hollow.svg#Nebula-Hollow') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+        .preview-area { 
+            background: #fff; 
+            color: #000; 
+            padding: 40px; 
+            border-radius: 4px; 
+        }
+        .waterfall p { margin: 0 0 10px 0; line-height: 1.2; white-space: nowrap; overflow: hidden; }
+        .glyph-map { margin-top: 30px; word-break: break-all; opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Webfont Demo</h1>
+        
+        <div class="font-section">
+            <div class="header">
+                <h2>Nebula-Hollow</h2>
+                <span class="badge">Regular</span>
+            </div>
+            
+            <div class="code-box">
+                <div class="code-header">CSS</div>
+                <pre>@font-face {
+  font-family: 'Nebula-Hollow';
+  font-family: 'Nebula-Hollow';
+  src: url('Nebula-Hollow.eot'); /* IE9 Compat Modes */
+  src: url('Nebula-Hollow.eot?#iefix') format('embedded-opentype'),
+       url('Nebula-Hollow.woff2') format('woff2'),
+       url('Nebula-Hollow.woff') format('woff'),
+       url('Nebula-Hollow.ttf') format('truetype'),
+       url('Nebula-Hollow.svg#Nebula-Hollow') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+</pre>
+            </div>
+
+            <div class="code-box">
+                <div class="code-header">Preload</div>
+                <pre>&lt;link rel="preload" href="Nebula-Hollow.woff2" as="font" type="font/woff2" crossorigin>
+&lt;link rel="preload" href="Nebula-Hollow.woff" as="font" type="font/woff" crossorigin>
+&lt;link rel="preload" href="Nebula-Hollow.ttf" as="font" type="font/ttf" crossorigin>
+&lt;link rel="preload" href="Nebula-Hollow.eot" as="font" type="font/eot" crossorigin>
+&lt;link rel="preload" href="Nebula-Hollow.svg" as="font" type="font/svg" crossorigin></pre>
+            </div>
+
+            <div class="preview-area" style="font-family: 'Nebula-Hollow', sans-serif;">
+                <div class="waterfall">
+                    <p style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-size: 32px;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+                </div>
+                <div class="glyph-map">
+                    <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                    <p>abcdefghijklmnopqrstuvwxyz</p>
+                    <p>0123456789</p>
+                    <p>!@#$%^&*()_+-=[]{}|;':",./<>?</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

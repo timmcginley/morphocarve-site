@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Nebula-Regular';
+  font-family: 'Nebula-Regular';
+  src: url('Nebula-Regular.eot'); /* IE9 Compat Modes */
+  src: url('Nebula-Regular.eot?#iefix') format('embedded-opentype'),
+       url('Nebula-Regular.woff2') format('woff2'),
+       url('Nebula-Regular.woff') format('woff'),
+       url('Nebula-Regular.ttf') format('truetype'),
+       url('Nebula-Regular.svg#Nebula-Regular') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}

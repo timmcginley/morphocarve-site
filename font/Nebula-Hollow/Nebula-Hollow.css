@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Nebula-Hollow';
+  font-family: 'Nebula-Hollow';
+  src: url('Nebula-Hollow.eot'); /* IE9 Compat Modes */
+  src: url('Nebula-Hollow.eot?#iefix') format('embedded-opentype'),
+       url('Nebula-Hollow.woff2') format('woff2'),
+       url('Nebula-Hollow.woff') format('woff'),
+       url('Nebula-Hollow.ttf') format('truetype'),
+       url('Nebula-Hollow.svg#Nebula-Hollow') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
